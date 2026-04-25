@@ -1,6 +1,6 @@
 # 🧾 Custom SSH Banner (Keenetic / Entware)
 
-Простой и удобный баннер для SSH с информацией о системе, пакетах Entware и сервисах.
+Лёгкий и информативный баннер для SSH с отображением состояния системы, пакетов Entware и сервисов.
 
 📦 Репозиторий: https://github.com/byrekrut/custom-banner-ssh-Keenetic
 
@@ -8,69 +8,38 @@
 
 ## 📁 Состав
 
-В репозитории есть 2 файла:
+В репозитории:
 
-* `custom-banner.sh` — сам баннер
-* `setup_opkg_profile.sh` — скрипт установки
+* `custom-banner.sh` — основной баннер
+* `setup_opkg_profile.sh` — установочный скрипт
 
 ---
 
-## ⚙️ Что делает установщик
+## ⚡ Быстрая установка (1 команда)
 
-Скрипт `setup_opkg_profile.sh`:
+```bash
+cd /opt/root && wget -q https://raw.githubusercontent.com/byrekrut/custom-banner-ssh-Keenetic/main/custom-banner.sh && sh <(wget -qO- https://raw.githubusercontent.com/byrekrut/custom-banner-ssh-Keenetic/main/setup_opkg_profile.sh)
+```
 
-* обновляет пакеты:
+---
 
-  ```bash
-  opkg update
-  ```
+## ⚙️ Что делает установка
 
+Скрипт автоматически:
+
+* обновляет список пакетов (`opkg update`)
 * устанавливает зависимости:
 
   * wget-ssl
   * whiptail
   * nano
+* настраивает автозапуск баннера через `~/.profile`
 
-* полностью перезаписывает:
-
-  ```bash
-  ~/.profile
-  ```
-
-* добавляет автозапуск:
-
-  ```bash
-  . /opt/etc/profile
-  . /opt/root/custom-banner.sh
-  ```
-
----
-
-## 📥 Установка
-
-### 1. Скачать файлы
+Добавляется:
 
 ```bash
-cd /opt/root
-wget https://raw.githubusercontent.com/byrekrut/custom-banner-ssh-Keenetic/main/custom-banner.sh
-wget https://raw.githubusercontent.com/byrekrut/custom-banner-ssh-Keenetic/main/setup_opkg_profile.sh
-```
-
----
-
-### 2. Выдать права
-
-```bash
-chmod +x custom-banner.sh
-chmod +x setup_opkg_profile.sh
-```
-
----
-
-### 3. Запустить установку
-
-```bash
-sh setup_opkg_profile.sh
+. /opt/etc/profile
+. /opt/root/custom-banner.sh
 ```
 
 ---
@@ -93,14 +62,14 @@ menu
 
 * обновить пакеты
 * обновить всё
-* посмотреть обновления
+* посмотреть доступные обновления
 * перезапустить сервис
 
 ---
 
 ## ⚠️ Важно
 
-❗ Скрипт перезаписывает файл:
+❗ Установщик **перезаписывает файл**:
 
 ```bash
 ~/.profile
@@ -112,19 +81,11 @@ menu
 
 ## ❌ Удаление
 
-1. Удалить баннер:
-
 ```bash
 rm -f /opt/root/custom-banner.sh
 ```
 
-2. Очистить автозапуск:
-
-```bash
-nano ~/.profile
-```
-
-Удалить строку:
+И убрать из `~/.profile` строку:
 
 ```bash
 . /opt/root/custom-banner.sh
@@ -134,10 +95,10 @@ nano ~/.profile
 
 ## 🔧 Настройка
 
-Добавление сервиса:
+Добавление своего сервиса:
 
-```sh
-Можно добавлять свои сервисы или полностью изменить по желанию самим.
+```bash
+check_service nginx nginx
 ```
 
 ---
