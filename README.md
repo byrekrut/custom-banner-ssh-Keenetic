@@ -98,7 +98,7 @@ rm -f /opt/root/custom-banner.sh
 Добавление своего сервиса:
 
 ```bash
-check_service nginx nginx
+check_service nginx nginx (пример) Добавлять в в соответствующий блок
 ```
 
 ---
