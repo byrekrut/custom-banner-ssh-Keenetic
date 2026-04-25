@@ -22,7 +22,7 @@
 ## ⚡ Быстрая установка (1 команда)
 
 ```bash
-cd /opt/root && wget -q https://raw.githubusercontent.com/byrekrut/custom-banner-ssh-Keenetic/main/custom-banner.sh && sh <(wget -qO- https://raw.githubusercontent.com/byrekrut/custom-banner-ssh-Keenetic/main/setup_opkg_profile.sh)
+cd /opt/root && wget -q https://raw.githubusercontent.com/byrekrut/custom-banner-ssh-Keenetic/main/custom-banner.sh && wget -q https://raw.githubusercontent.com/byrekrut/custom-banner-ssh-Keenetic/main/setup_opkg_profile.sh && sh setup_opkg_profile.sh
 ```
 
 ---
