@@ -4,7 +4,7 @@
 ## 📸 Preview
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/byrekrut/custom-banner-ssh-Keenetic/main/2026-04-25_18-26-51.png" alt="Custom SSH Banner" width="800"/>
+  <img src="https://raw.githubusercontent.com/byrekrut/custom-banner-ssh-Keenetic/main/2026-04-25_18-26-51.png" width="600"/>
 </p>
 📦 Репозиторий: https://github.com/byrekrut/custom-banner-ssh-Keenetic
 
